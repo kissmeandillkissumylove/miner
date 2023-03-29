@@ -1,0 +1,315 @@
+//settings
+:here
+set #UOpilot findwindow (UoPilot)
+set #result setwindowtext (#UOpilot Calculator)
+wait 30000
+set #hvnw findwindow ("Небеса")
+set #chrw getwindow (#hvnw CHILD)
+set windowpos -8 0 700 525 #hvnw
+set mouseclickdelay 10 + random(100)
+set timer
+
+
+//enter the main loop
+while 1 = 1
+    //спам
+    set #img findimage (291, 85 385, 112 (\for-calculator\my_scripts\img\23.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        left 654, 34 6 6 6 6 #chrw
+        wait 1500 + random (1000)
+    end_if
+
+
+    //checking if he came out of the cave
+    set #img findimage (17, 72 105, 161 (\for-calculator\my_scripts\img\30.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 180000 + random (1000)
+        left 296, 240 2 2 2 2 #chrw
+    end_if
+
+
+    //dig
+    set #img findimage (120, 292 232, 336 (\for-calculator\my_scripts\img\2.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 100 + random (1000)
+        left 172, 267 20 7 20 7 #chrw
+    end_if
+
+
+    //attack
+    set #img findimage (58, 377 166, 416 (\for-calculator\my_scripts\img\3.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 1000 + random (1000)
+        left 114, 349 20 7 20 7 #chrw
+        wait 5000
+
+        set #i 0
+        //battle loop
+        while #i < 30
+
+            //use spell
+            set #img findimage (80, 383 135, 436 (\for-calculator\my_scripts\img\4.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 1000 + random (1000)
+                left 109, 358 8 8 8 8 #chrw
+                wait 10000 + random (2000)
+            end_if
+
+
+            //still in battle
+            set #img findimage (80, 383 135, 436 (\for-calculator\my_scripts\img\11.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                set #img findimage (0, 0 100, 100 (\for-calculator\my_scripts\img\10.bmp) %arr 2 60 1 3 abs)
+                if #img > 0
+                    wait 1000 + random (1000)
+                    left 423, 314 7 7 7 7 #chrw
+                    wait 1000 + random (1000)
+                    left 160, 313 7 7 7 7 #chrw
+                    wait 1000 + random (1000)
+                    left 344, 145 80 80 80 80 #chrw
+                    wait 10000 + random (5000)
+                    left 208, 315 7 7 7 7 #chrw
+                    wait 1000 + random (1000)
+                    left 344, 145 80 80 80 80 #chrw
+                    wait 5000 + random (5000)
+                end_if
+            end_if
+
+
+            //check victory
+            set #img findimage (276, 112 389, 144 (\for-calculator\my_scripts\img\14.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                break
+            end_if
+
+            //check поражение
+            set #img findimage (276, 112 389, 144 (\for-calculator\my_scripts\img\12.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                break
+            end_if
+
+            //checking if he came out of the cave
+            set #img findimage (17, 72 105, 161 (\for-calculator\my_scripts\img\30.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 180000 + random (1000)
+                left 296, 240 2 2 2 2 #chrw
+            end_if
+
+            set #i #i + 1
+
+        end_while
+
+    end_if
+
+
+
+
+
+    //take loot
+    set #img findimage (239, 325 343, 360 (\for-calculator\my_scripts\img\15.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+
+        //чото красное
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\16.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            left 283, 309 11 11 11 11 #chrw
+            wait 1500 + random (1000)
+            left 654, 34 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+        end_if
+
+
+        //яйцо
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\32.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            left 283, 309 11 11 11 11 #chrw
+            wait 1500 + random (1000)
+            left 654, 34 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+        end_if
+
+
+        //чото рыжее
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\17.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            left 283, 309 11 11 11 11 #chrw
+            wait 1500 + random (1000)
+            left 654, 34 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+        end_if
+
+        //чото зеленое
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\18.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            set #img findimage (313, 188 356, 241 (\for-calculator\my_scripts\img\20.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 1500 + random (1000)
+                left 342, 166 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+                left 342, 265 20 7 20 7 #chrw
+                wait 1500 + random (1000)
+                left 654, 34 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+            else
+                wait 1500 + random (1000)
+                left 283, 309 11 11 11 11 #chrw
+                wait 1500 + random (1000)
+            end_if
+        end_if
+
+        //чото синее
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\19.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            set #img findimage (316, 189 362, 234 (\for-calculator\my_scripts\img\27.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 1500 + random (1000)
+                left 342, 166 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+                left 342, 265 20 7 20 7 #chrw
+                wait 1500 + random (1000)
+                left 654, 34 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+            else
+                wait 1500 + random (1000)
+                left 283, 309 11 11 11 11 #chrw
+                wait 1500 + random (1000)
+            end_if
+        end_if
+
+        //cнежки
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\9.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            left 342, 166 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+            left 654, 34 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+        end_if
+
+        //чото фиолетовое
+        set #img findimage (311, 216 365, 321 (\for-calculator\my_scripts\img\25.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            set #img findimage (313, 188 356, 241 (\for-calculator\my_scripts\img\20.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 1500 + random (1000)
+                left 342, 166 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+                left 342, 265 20 7 20 7 #chrw
+                wait 1500 + random (1000)
+                left 654, 34 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+            else
+                wait 1500 + random (1000)
+                left 283, 309 11 11 11 11 #chrw
+                wait 1500 + random (1000)
+            end_if
+        end_if
+
+
+        //чото серое
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\31.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            set #img findimage (316, 189 362, 234 (\for-calculator\my_scripts\img\27.bmp) %arr 2 60 1 3 abs)
+            if #img > 0
+                wait 1500 + random (1000)
+                left 342, 166 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+                left 342, 265 20 7 20 7 #chrw
+                wait 1500 + random (1000)
+                left 654, 34 6 6 6 6 #chrw
+                wait 1500 + random (1000)
+            else
+                wait 1500 + random (1000)
+                left 283, 309 11 11 11 11 #chrw
+                wait 1500 + random (1000)
+            end_if
+        end_if
+
+
+        //рыжие бобы ебаные
+        set #img findimage (318, 275 365, 321 (\for-calculator\my_scripts\img\26.bmp) %arr 2 60 1 3 abs)
+        if #img > 0
+            wait 1500 + random (1000)
+            left 342, 229 17 28 0 0 #chrw
+            wait 1500 + random (1000)
+            left 283, 309 11 11 11 11 #chrw
+            wait 1500 + random (1000)
+            left 654, 34 6 6 6 6 #chrw
+            wait 1500 + random (1000)
+        end_if
+    end_if
+
+
+    //если не было лута
+    set #img findimage (295, 330 365, 378 (\for-calculator\my_scripts\img\22.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 1500 + random (1000)
+        left 654, 34 6 6 6 6 #chrw
+        wait 1500 + random (1000)
+    end_if
+
+
+    //если сумочька забилась
+    set #img findimage (283, 314 393, 354 (\for-calculator\my_scripts\img\28.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 1500 + random (1000)
+        left 471, 59 6 6 6 6 #chrw
+        wait 1500 + random (1000)
+        left 397, 292 20 7 20 7 #chrw
+        wait 1500 + random (1000)
+        left 344, 252 20 7 20 7 #chrw
+        wait 1500 + random (1000)
+    end_if
+
+
+    //если кончилась энергия
+    set #img findimage (236, 198 262, 231 (\for-calculator\my_scripts\img\29.bmp) %arr 2 60 1 3 abs)
+    if #img > 0
+        wait 220000 + random (30000)
+        left 471, 105 6 6 6 6 #chrw
+        wait 1500 + random (1000)
+    end_if
+
+    //перезапуск клиента
+    if timer > 7000000
+        log закрытие через 1-2 минуты!
+        wait 60000 + random (60000)
+        terminate Небеса
+        wait 1000000 + random (200000)
+        log запуск игры через 1 мин!
+        wait 60000
+        kleft 52, 749 abs
+        wait 3000
+        sendex he
+        wait 3000
+        sendex {enter}
+        gosub here
+    end_if
+
+
+
+end_while
+end_script
